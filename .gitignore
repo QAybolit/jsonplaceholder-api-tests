@@ -1,0 +1,21 @@
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### IntelliJ IDEA ###
+.idea
+
+*.iws
+*.iml
+*.ipr
+*.lock
+*.log
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+ajcore*.txt
+
+### Mac OS ###
+.DS_Store
