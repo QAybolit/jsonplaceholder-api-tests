@@ -15,7 +15,6 @@ import static org.hamcrest.Matchers.is;
 @Story("Проверка функциональности API для управления постами")
 public class PostsTests extends BaseTest {
 
-
     @Test
     @DisplayName("Получение списка постов")
     public void getPostsTest() {
