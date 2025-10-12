@@ -9,32 +9,35 @@ pipeline {
     stages {
 
         stage("Очистка окружения") {
-            cleanWs()
+            steps {
+                cleanWs()
+            }
         }
 
         stage("Копирование кода из репозитория") {
-            git branch: "${BRANCH_NAME}",
-                url: 'https://github.com/QAybolit/jsonplaceholder-api-tests.git'
+            steps  {
+                git url: 'https://github.com/QAybolit/jsonplaceholder-api-tests.git', branch: "${BRANCH_NAME}"
+            }
         }
 
         stage("Запуск тестов") {
-            sh "./gradlew clean ${TASK}"
+            steps {
+                sh("./gradlew clean ${TASK}")
+            }
         }
 
         stage("Генерация Allure-отчета") {
-            sh './gradlew allureReport'
+            steps {
+                sh("./gradlew allureReport")
+            }
         }
     }
 
     post {
         always {
-            allure([
-                includeProperties: false,
-                jdk: '',
-                properties: [],
-                reportBuildPolicy: 'ALWAYS',
-                results: [[path: 'build/allure-results']]
-                ])
+            allure includeProperties: false,
+                   jdk: '',
+                   results: [[path: 'build/allure-results']]
         }
     }
 }
