@@ -51,3 +51,10 @@ tasks.withType(Test).configureEach {
         exceptionFormat "full"
     }
 }
+
+tasks.register("regress", Test) {
+
+    useJUnitPlatform {
+        includeTags("regress")
+    }
+}
