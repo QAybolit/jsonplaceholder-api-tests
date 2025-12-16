@@ -2,9 +2,12 @@ package tests;
 
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
+import io.restassured.response.Response;
 import models.PostModel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
@@ -15,12 +18,13 @@ import static specs.PostSpecs.getResponseSpec;
 import static specs.PostSpecs.postRequestSpec;
 
 @Owner("Dina")
+@Tags({@Tag("smoke"), @Tag("regress")})
 @Feature("Проверка функциональности API для управления постами")
 public class PostsTests {
 
     @Test
-    @Tag("regress")
-    @DisplayName("Получение списка постов")
+    @DisplayName("GET /posts - получение списка постов")
+    @Story("Получение списка постов")
     public void getPostsTest() {
         String title = "sunt aut facere repellat provident occaecati excepturi optio reprehenderit";
 
@@ -39,8 +43,8 @@ public class PostsTests {
     }
 
     @Test
-    @Tag("regress")
-    @DisplayName("Создание поста")
+    @DisplayName("POST /posts - создание поста")
+    @Story("Создание поста")
     public void createPostTest() {
         PostModel body = new PostModel();
         body.setTitle("Преступление и наказание");
@@ -66,8 +70,8 @@ public class PostsTests {
     }
 
     @Test
-    @Tag("regress")
-    @DisplayName("Получение поста по ID")
+    @DisplayName("GET /posts/{id} - получение поста по ID")
+    @Story("Получение поста по ID")
     public void getPostByIdTest() {
         int postId = 13;
         int userId = 2;
@@ -91,8 +95,28 @@ public class PostsTests {
     }
 
     @Test
-    @Tag("regress")
-    @DisplayName("Обновление содержания поста")
+    @DisplayName("GET /posta/{id} - получение поста по несуществующему ID")
+    @Story("Получение поста по ID")
+    public void getPostByIncorrectIdTest() {
+        int postId = 100000;
+
+        Response response = step("Отправить GET запрос для получения поста по несуществующему ID на эндпоинт '/posts/{id}'",
+                () -> given(postRequestSpec)
+                        .when()
+                        .get("/posts/" + postId)
+                        .then()
+                        .spec(getResponseSpec(404))
+                        .extract().response()
+        );
+
+        step("Проверить, что тело ответа пустое", () -> {
+            assertEquals("{}", response.getBody().asString(), "Тело ответа не пустое");
+        });
+    }
+
+    @Test
+    @DisplayName("PUT /posts/{id} - обновление содержания поста")
+    @Story("Обновление содержания поста")
     public void updatePostTest() {
         int postId = 3;
         PostModel body = new PostModel();
@@ -118,8 +142,8 @@ public class PostsTests {
     }
 
     @Test
-    @Tag("regress")
-    @DisplayName("Частичное обновление содержания поста")
+    @DisplayName("PATCH /posts/{id} - частичное обновление содержания поста")
+    @Story("Частичное обновление содержания поста")
     public void partialUpdatePostTest() {
         int postId = 2;
         PostModel body = new PostModel();
@@ -141,8 +165,8 @@ public class PostsTests {
     }
 
     @Test
-    @Tag("regress")
-    @DisplayName("Удаление поста")
+    @DisplayName("DELETE /posts/{id} - удаление поста")
+    @Story("Удаление поста")
     public void deletePostTest() {
         int postId = 18;
 
