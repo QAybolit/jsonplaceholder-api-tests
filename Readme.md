@@ -10,13 +10,13 @@
 
 * [Запуск из терминала](#computer-запуск-из-терминала)
 
-* [Сборка в Jenkins](#img-cборка-в-Jenkins)
+* [Сборка в Jenkins](#-сборка-в-jenkins)
 
-* [Allure отчет](#allure-отчет)
+* [Allure отчет](#-allure-отчет)
 
-* [Интеграция с Allure TestOps](#интеграция-с-allure-testops)
+* [Интеграция с Allure TestOps](#-интеграция-с-allure-testops)
 
-* [Уведомление в Telegram при помощи бота](#уведомление-в-telegram-при-помощи-бота)
+* [Уведомление в Telegram при помощи бота](#-уведомление-в-telegram-при-помощи-бота)
 
   <br>
 
