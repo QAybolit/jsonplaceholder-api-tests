@@ -18,7 +18,6 @@
 
 * [Уведомление в Telegram при помощи бота](#img-width25-alttelegram-srcmediaiconstelegramsvg-уведомление-в-telegram-при-помощи-бота)
 
-* [Примеры видео выполнения тестов на BrowserStack](#img-width25-altselenoid-srcmediaiconsselenoidsvg-примеры-видео-выполнения-тестов-на-selenoid)  
   <br>
 
 
