@@ -105,6 +105,6 @@
 ---
 ## <img width="25" alt="telegram" src="media/icons/telegram.svg"> Уведомление в Telegram при помощи бота:
 
-<img alt="Интеграция с Jira" src="media/images/telegram.png">
+<img alt="Интеграция с Telegram" src="media/images/telegram.png">
 <br>
 
