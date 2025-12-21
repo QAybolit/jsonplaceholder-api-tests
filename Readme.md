@@ -10,7 +10,7 @@
 
 * [Запуск из терминала](#computer-запуск-из-терминала)
 
-* [Сборка в Jenkins](#сборка-в-jenkins)
+* [Сборка в Jenkins](#img-cборка-в-Jenkins)
 
 * [Allure отчет](#allure-отчет)
 
