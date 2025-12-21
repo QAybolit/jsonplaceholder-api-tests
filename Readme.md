@@ -4,19 +4,19 @@
 
 ## **Содержание:**
 
-* [Технологии и инструменты](#star-технологии-и-инструменты)
+* [Технологии и инструменты](#технологии-и-инструменты)
 
-* [Реализованные проверки](#open_file_folder-реализованные-проверки)
+* [Реализованные проверки](#реализованные-проверки)
 
-* [Запуск из терминала](#computer-запуск-из-терминала)
+* [Запуск из терминала](#запуск-из-терминала)
 
-* [Сборка в Jenkins](#img-width25-altjenkins-srcmediaiconsjenkinssvg-сборка-в-jenkins)
+* [Сборка в Jenkins](#сборка-в-jenkins)
 
-* [Allure отчет](#img-width25-altallure-srcmediaiconsalluresvg-allure-отчет)
+* [Allure отчет](#allure-отчет)
 
-* [Интеграция с Allure TestOps](#img-width25-altalluretestops-srcmediaiconsallure_tosvg-интеграция-с-allure-testops)
+* [Интеграция с Allure TestOps](#интеграция-с-allure-testops)
 
-* [Уведомление в Telegram при помощи бота](#img-width25-alttelegram-srcmediaiconstelegramsvg-уведомление-в-telegram-при-помощи-бота)
+* [Уведомление в Telegram при помощи бота](#уведомление-в-telegram-при-помощи-бота)
 
   <br>
 
